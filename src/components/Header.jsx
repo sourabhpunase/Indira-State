@@ -28,8 +28,15 @@ export default function Header() {
 <Link to='/about'>
 <li  className=' text-zinc-950 hover:underline'><FaAddressBook className='text- ml-3 sm:ml-1 mb-0 sm:mb-1 w-15 sm:w-8 h-8 sm:w-15 '/>About</li>
 </Link>
-<Link to='sign-in'>
-<li  className=' text-zinc-950 hover:underline' ><FaSignInAlt className='text-stone-500 ml-3 sm:ml-1 mb-0 sm:mb-1 w-15 sm:w-8 h-8 sm:w-15 '/>Sign in</li>
+
+<Link to='/profile'>
+{currentUser?(
+  <img className='rounded-full h-12 w-12 object-cover' src={currentUser.avatar} alt='profile'/>
+):(
+  <li  className=' text-zinc-950 hover:underline' ><FaSignInAlt className='text-stone-500 ml-3 sm:ml-1 mb-0 sm:mb-1 w-15 sm:w-8 h-8 sm:w-15 '/>Sign in</li>
+  )}
+
+
 </Link>
 </ul>
 </div>
